@@ -1,0 +1,38 @@
+$carousel-caption-width: 50%;
+.carousel-caption {
+    text-align: start !important;
+    top: 30% !important;
+    left: 0 !important;
+    transform: translate(5%, -50%) !important;
+    max-width: 50% !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+}
+.carousel-indicators [data-bs-target] {
+    background-color: var(--bs-success) !important;
+    height: 15px !important;
+    width: 20px !important;
+    border-radius: 20px !important;
+    margin-right: 10px !important; /* Adjust the spacing between the indicator bullets */
+    &.active {
+        width: 60px !important;
+    }
+}
+
+.carousel-indicators {
+    bottom: 20px !important; /* Adjust the position of the indicators */
+    button {
+        border-radius: 50% !important; /* Make the indicator bullets circular */
+        background-color: var(
+            --bs-success
+        ) !important; /* Set the background color of the active indicator */
+        border: none !important; /* Remove the border */
+    }
+    button:not(.active) {
+        width: 15px !important; /* Set the width of the inactive indicator bullets */
+        height: 15px !important; /* Set the height of the inactive indicator bullets */
+    }
+}

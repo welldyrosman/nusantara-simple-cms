@@ -1,0 +1,14 @@
+[
+    { "title": "Beranda", "content": "Content 1","url":"/", "children": [] },
+    { "title": "Aqiqah", "content": "Content 2","url":"/aqiqah", "children": [] },
+    { "title": "Hewan Kurban", "content": "Content 3","url":"/hewan-kurban", "children": [] },
+    { "title": "Artikel", "content": "Content 3","url":"/artikel", "children": [] },
+    { "title": "Profil", "content": "Content 3","url":"", "children": [
+        {
+            "title": "Tentang Kami", "content": "Content 3","url":"/", "children": []
+        },
+        {
+            "title": "Kontak Kami", "content": "Content 3","url":"/", "children": []
+        }
+    ] }
+]

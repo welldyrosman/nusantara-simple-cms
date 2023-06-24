@@ -1,0 +1,203 @@
+@import "app/_variables";
+@import "app/_overrides";
+@import "app/_icons";
+@import "app/_utilities";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+@font-face {
+    font-family: "Poppins";
+    src: local("Poppins"),
+        url("/dist/fonts/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Poppins-SemiBold";
+    src: local("Poppins-SemiBold"),
+        url("/dist/fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Poppins-Medium";
+    src: local("Poppins-Medium"),
+        url("/dist/fonts/Poppins-Medium.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Poppins-Bold";
+    src: local("Poppins-Bold"),
+        url("/dist/fonts/Poppins-Bold.ttf") format("truetype");
+}
+$font-size-base: 0.8753rem;
+
+@function px-to-rem($px) {
+    $rem-value: $px / 16; // Divide pixels by 16 to convert to rem
+    @return $rem-value * 1rem; // Return the value in rem unit
+}
+
+@for $i from 8 through 30 {
+    .font-size-#{$i} {
+        font-size: px-to-rem($i);
+    }
+}
+$font-family-base: "Poppins", Helvetica, Arial !important;
+:root {
+    --bs-body-font-family: $font-family-base;
+    --bs-body-color: var(--bs-gray-900) !important;
+}
+.f-med {
+    font-family: "Poppins-Medium", sans-serif !important;
+}
+.f-sbold {
+    font-family: "Poppins-SemiBold", sans-serif !important;
+}
+.f-bold {
+    font-family: "Poppins-Bold", sans-serif !important;
+}
+.box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .corner-image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        max-height: 100%;
+        opacity: 0.5;
+    }
+    .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        p {
+            max-width: 70%;
+            display: -webkit-box;
+            -webkit-line-clamp: 7; /* Menampilkan teks hingga 7 baris */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .btn {
+            margin-top: 10px;
+        }
+    }
+}
+
+.custom-hr {
+    border-top: 3px solid var(--bs-gray-900) !important;
+    opacity: 1;
+}
+.newest-article {
+    position: relative;
+    width: 100%;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 1rem;
+        background-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 0)
+        );
+    }
+    .textbox {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        color: white;
+    }
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+.text-populer {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.article-list {
+    .article-item {
+        img {
+            height: 100%;
+            width: auto;
+            border-radius: 5px 0 0 5px;
+            margin-right: 10px;
+        }
+
+        .textbox {
+            p {
+                margin: 0 !important;
+            }
+        }
+    }
+}
+@for $i from 1 through 10 {
+    .content-article-#{$i} {
+        margin-top: 5px;
+        display: -webkit-box;
+        -webkit-line-clamp: $i;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+.nav-link {
+    padding: 0.3rem 1rem;
+    font-weight: 500;
+    margin-inline: 0.5rem;
+    &.active {
+        color: white !important;
+        background-color: var(--bs-success);
+        border-radius: 1rem;
+        padding: 0.3rem 1rem !important;
+    }
+}
+.carousel-thumbnail {
+    opacity: 0.5; // Mengatur opasitas thumbnail gambar yang tidak aktif
+    transition: opacity 0.3s ease-in-out; // Transisi saat opasitas berubah
+
+    &.active {
+        opacity: 1; // Mengatur opasitas menjadi 1 pada thumbnail gambar yang aktif
+    }
+}
+
+.carousel-related {
+    .carousel-control-prev,
+    .carousel-control-next {
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: var(--bs-success);
+        border-radius: 1.5rem;
+        width: fit-content;
+        height: fit-content;
+        padding: 1rem;
+    }
+
+    .carousel-control-prev {
+        left: -1rem;
+    }
+
+    .carousel-control-next {
+        right: -1rem;
+    }
+}
+.text-justify {
+    text-align: justify;
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+    }
+
+    @supports (text-justify: inter-character) {
+      text-justify: inter-character;
+    }
+  }
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
