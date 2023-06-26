@@ -13,7 +13,7 @@
                     <p class="">Nusantara Aqiqah merupakan layanan aqiqah terpercaya yang berkerjasama dengan peternak
                         berpengalaman di setiap titik Indonesia. Dengan masakan yang lezat dan menggugah selera, Nusantara
                         Aqiqah akan selalu borkomitmen dalam menjaga cita rasa yang konsisten.</p>
-                    <button class="btn btn-success">Hubungi Kami</button>
+                    <a href="/profil" class="btn btn-success">Hubungi Kami</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -23,7 +23,7 @@
                     <p class="">Layanan aqiqah dan qurban terpercaya untuk menghormati kelahiran anak Anda. Pilihlah paket
                         aqiqah berkualitas dan nyaman, sehingga Anda dapat fokus pada kebahagiaan keluarga, sementara kami
                         menangani semua detailnya.</p>
-                    <button class="btn btn-success">Hubungi Kami</button>
+                    <a href="/profil" class="btn btn-success">Hubungi Kami</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -33,7 +33,7 @@
                     <p>Percayakan kepada kami untuk mengurus semua kebutuhan qurban Anda. Dengan pemotongan yang halal dan
                         penuh rahmat, Anda dapat memberikan daging berkualitas kepada yang membutuhkan, sambil berbagi
                         kebahagiaan dengan sesama.</p>
-                    <button class="btn btn-success">Hubungi Kami</button>
+                    <a href="/profil" class="btn btn-success">Hubungi Kami</a>
                 </div>
             </div>
         </div>

@@ -20,7 +20,9 @@ class CreateArticlesTable extends Migration
             $table->string('slug');
             $table->string('title');
             $table->string('description');
+            $table->string('image');
             $table->text('content');
+            $table->integer('view_qty')->default(0);
             $table->timestamps();
             $table->index(['published_at', 'slug']);
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

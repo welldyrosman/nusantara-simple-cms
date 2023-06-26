@@ -24,7 +24,11 @@ class Article extends SluggableModel
     {
         return $this->belongsTo(Category::class);
     }
-
+    public function incrementViewCount()
+    {
+        $this->view_qty++;
+        $this->save();
+    }
     /**
      * @param $query
      *
@@ -33,6 +37,10 @@ class Article extends SluggableModel
     public function scopePublished($query)
     {
         return $query->where('published_at', '<=', now())->orderBy('published_at', 'desc');
+    }
+    public function scopePopular($query)
+    {
+        return $query->where('published_at', '<=', now())->orderBy('view_qty', 'desc');
     }
 
     /**

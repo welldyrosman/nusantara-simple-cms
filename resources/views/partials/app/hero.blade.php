@@ -17,7 +17,7 @@
                             <div class="content">
                                 <h2 class="f-bold">AQIQAH</h2>
                                 <p class="content-article-7">Apa itu jasa akikah? Jasa akikah adalah layanan kami yang didedikasikan untuk membantu keluarga Muslim melaksanakan tradisi akikah dengan mudah dan nyaman. Kami menyediakan paket lengkap untuk memastikan acara akikah berjalan lancar dan sesuai dengan aturan yang ditetapkan.</p>
-                                <button class="btn btn-success">Pesan Sekarang</button>
+                                <a href="/aqiqah" class="btn btn-success">Pesan Sekarang</a>
                             </div>
                         </div>
                         <!-- <div class="productkind-box">
@@ -36,7 +36,7 @@
                             <div class="content">
                                 <h2 class="f-bold">HEWAN KURBAN</h2>
                                 <p class="content-article-7">Selamat datang di layanan kami yang menyediakan hewan kurban berkualitas tinggi untuk memenuhi kebutuhan Anda dalam melaksanakan ibadah kurban. Kami memahami pentingnya momen ini bagi umat Muslim, dan dengan bangga kami menawarkan produk hewan kurban yang terbaik.</p>
-                                <button class="btn btn-success">Pesan Sekarang</button>
+                                <a href='/hewan-kurban' class="btn btn-success">Pesan Sekarang</a>
                             </div>
                         </div>
                         <!-- <div class="productkind-box">

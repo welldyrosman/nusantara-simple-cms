@@ -1,10 +1,7 @@
-@extends('layouts.app')
-@include('partials.app.sections', [
-'title' => getTitle($title),
-'description' => getDescription($description),
-'image' => getImage()
-])
+@extends('layouts.app') 
+
 <section class="section">
+   
     <div class="container my-5">
         <div class="row">
             <div class="col-md-9">

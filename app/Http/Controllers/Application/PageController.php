@@ -14,27 +14,55 @@ class PageController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function getIndex()
-    {
+    {   
+        $page=Page::find(4);
         return view('app.beranda', [
-            'title' => getTitle(),
-            'description' => getDescription(),
-            'articles' => Article::published()->paginate(4)
+            'title' => $page->title,
+            'description' => $page->content,
+            'articles' => Article::published()->paginate(5),
+            'top_articles'=>Article::popular()->paginate(5),
         ]);
     }
     public function aqiqah()
     {
+        $page=Page::find(1);
+
         return view('app.aqiqah', [
-            'title' => getTitle(),
-            'description' => getDescription(),
-            'articles' => Article::published()->paginate(4)
+            'title' => $page->title,
+            'description' => $page->content,        
+            'articles' => Article::published()->paginate(4),
+            'top_articles'=>Article::popular()->paginate(5),
+        ]);
+    }
+    public function artikel()
+    {
+        $page=Page::find(1);
+
+        return view('app.articles', [      
+            'articles' => Article::published()->paginate(10),
+            'top_articles'=>Article::popular()->paginate(5),
         ]);
     }
     public function kurban()
     {
+       
+        $page=Page::find(2);
         return view('app.kurban', [
-            'title' => getTitle(),
-            'description' => getDescription(),
-            'articles' => Article::published()->paginate(4)
+            'title' => $page->title,
+            'description' => $page->content,
+            'articles' => Article::published()->paginate(4),
+            'top_articles'=>Article::popular()->paginate(5),
+        ]);
+    }
+    public function profil()
+    {
+       
+        $page=Page::find(3);
+        return view('app.profile', [
+            'title' => $page->title,
+            'description' => $page->content,
+            'articles' => Article::published()->paginate(4),
+            'top_articles'=>Article::popular()->paginate(5),
         ]);
     }
     /**
@@ -47,7 +75,7 @@ class PageController extends Controller
         return view('app.articledetail', [
             'title' => getTitle(),
             'description' => $category->description,
-            'articles' => Article::where('category_id', $category->id)->paginate(4)
+            'articles' => Article::where('category_id', $category->id)->paginate(4),
         ]);
     }
 
@@ -68,7 +96,14 @@ class PageController extends Controller
      */
     public function getArticle(Article $article)
     {
-        return view('app.content', ['object' => $article]);
+        $page=Page::find(1);
+        $article->incrementViewCount();
+        return view('app.articledetail', [
+            'title' => $page->title,
+            'article'=>$article,
+            'articles' => Article::where('category_id', $article->category_id)->paginate(4),
+            'top_articles'=>Article::popular()->paginate(5),
+        ]);
     }
 
     /**
