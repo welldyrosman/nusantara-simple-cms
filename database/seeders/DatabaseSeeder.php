@@ -54,12 +54,12 @@ class DatabaseSeeder extends Seeder
                 'name' => $data[$i-1].'  '.$p,
                 'weight_start'=>3,
                 'weight_end'=>3,
-                'image'=>'/i/hewan/'.$data[$i-1].'  '.$p.'.png',
+                'image'=>'/i/uploads/hewan/sample.png',
                 'category'=>$i,
                 'price'=>1000000*$i
             ]);
         }
         }
-        
+
     }
 }

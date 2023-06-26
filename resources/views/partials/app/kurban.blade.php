@@ -36,7 +36,7 @@
                         <h5 class="text-success">{{ $hewan->name }}</h5>
 
                         <div class="card h-100 catalog">
-                            <img src="{{ $hewan->image }}" class="card-img-top" alt="...">
+                            <img src="{{ URL::asset($hewan->image) }}" class="card-img-top" alt="...">
                             <div class="card-body p-1">
                                 <a target="blank" href="https://wa.me/6289626219590?text=Hallo%0D%0ASaya+Tertarik+dengan+hewan+Kurban+<?php echo $hewan->name; ?>%0D%0Abolehkan+saya+bertanya+lebih+lanjut."class="btn btn-success form-control">Rp.
                                     {{ number_format($hewan->price, 0, ',', '.') }} / Ekor</a>
