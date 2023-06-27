@@ -2,6 +2,7 @@
 
 @section('content')
     @include('partials.admin.show.init')
+    @include('partials.admin.show.file',['attribute'=>'image'])
     @include('partials.admin.show.dropdown', ['attribute' => 'category_id'])
     @include('partials.admin.show.text', ['attribute' => 'published_at', 'class' => 'datepicker', 'default' => now()->format('Y-m-d')])
     @foreach (['title', 'description'] as $a)

@@ -10,7 +10,7 @@ if (!function_exists('createTranslation')) {
      * @return array
      */
     function createTranslation(array $resources, array $translation)
-    {
+    {   
         foreach ($resources as $resource => $values) {
             if (isset($values['fields'])) {
                 $translation['fields'][$resource] = $values['fields'];

@@ -18,6 +18,7 @@ class ArticleController extends AdminController
         'category_id'  => 'required|integer',
         'description'  => 'required|string|max:200',
         'published_at' => 'required|string',
+        'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
         'title'        => 'required|string|max:200'
     ];
 
@@ -28,7 +29,7 @@ class ArticleController extends AdminController
      */
     public function index(ArticleDataTable $dataTable)
     {
-        return $dataTable->render('admin.table', ['link' => route('admin.article.create')]);
+        return $dataTable->render('admin.table', ['link' => route('admin.article.create'),'cannotAdd'=>true]);
     }
 
     /**
@@ -46,8 +47,8 @@ class ArticleController extends AdminController
      * @throws \Exception
      */
     public function store(Request $request)
-    {
-        return $this->createFlashRedirect(Article::class, $request);
+    {   
+        return $this->createFlashRedirect(Article::class, $request,'image');
     }
 
     /**
@@ -79,7 +80,7 @@ class ArticleController extends AdminController
      */
     public function update(Article $article, Request $request)
     {
-        return $this->saveFlashRedirect($article, $request);
+        return $this->saveFlashRedirect($article, $request,'image');
     }
 
     /**

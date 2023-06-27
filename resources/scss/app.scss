@@ -199,5 +199,7 @@ $font-family-base: "Poppins", Helvetica, Arial !important;
       text-justify: inter-character;
     }
   }
-
+.catalog{
+    border: none !important;
+}
 @import "../../node_modules/bootstrap/scss/bootstrap";

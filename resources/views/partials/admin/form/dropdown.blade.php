@@ -1,5 +1,6 @@
 <div class="field">
     <label class="label">{{ __('admin.fields.' . $resource . '.' . $attribute) }}</label>
+
     <div class="control">
         <div class="select is-medium is-fullwidth">
             <select name="{{ $attribute }}">

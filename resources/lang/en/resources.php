@@ -21,6 +21,20 @@ return [
         'index'  => 'Articles',
         'show'   => 'Show article'
     ],
+    'hewan' => [
+        'create' => 'Create Hewan',
+        'edit'   => 'Edit Hewan',
+        'fields' => [
+            'name'  => 'Nama Hewan',
+            'weight_start'      => 'Berat Mulai',
+            'weight_end'  => 'Berat Sampai',
+            'category' => 'Jenis Hewan',
+            'category_label'=>'Jenis Hewan',
+            'price'        => 'Harga'
+        ],
+        'index'  => 'Hewan',
+        'show'   => 'Show Hewan'
+    ],
     'category' => [
         'create' => 'Create category',
         'edit'   => 'Edit category',

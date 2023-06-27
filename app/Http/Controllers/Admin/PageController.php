@@ -26,7 +26,7 @@ class PageController extends AdminController
      */
     public function index(PageDataTable $dataTable)
     {
-        return $dataTable->render('admin.table', ['link' => route('admin.page.create')]);
+        return $dataTable->render('admin.table', []);
     }
 
     /**
