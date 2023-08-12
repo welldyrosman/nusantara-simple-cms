@@ -32,7 +32,7 @@
                                     <div>Penulis :Rizky Aulia [{{ $article->localized_published_at }}]</div>
                                 </div>
                                 <p class="card-text content-article-3"> {{ getNWords($article->content, 50) }}</p>
-                                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small>
+                                <p class="card-text"><small class="text-body-secondary">Last updated {{ $article->updated_at->diffForHumans() }}</small>
                                 </p>
                                 <div class="d-flex justify-content-end">
                                     <a href="{{ $article->link }}" class="btn btn-success">Selengkapnya</a>

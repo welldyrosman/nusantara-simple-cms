@@ -21,6 +21,14 @@ class ArticleController extends AdminController
         'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
         'title'        => 'required|string|max:200'
     ];
+    protected $validationUpdate = [
+        'content'      => 'required|string',
+        'category_id'  => 'required|integer',
+        'description'  => 'required|string|max:200',
+        'published_at' => 'required|string',
+        'image'        => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
+        'title'        => 'required|string|max:200'
+    ];
 
     /**
      * @param \App\Http\Controllers\Admin\DataTables\ArticleDataTable $dataTable

@@ -30,7 +30,7 @@ abstract class AdminController extends Controller
      *
      * @var string
      */
-    protected $uploadPath = 'i/uploads';
+    protected $uploadPath = 'i';
 
     /**
      * @var bool
@@ -46,6 +46,7 @@ abstract class AdminController extends Controller
      * @var array
      */
     protected $validation = [];
+    protected $validationUpdate=[];
 
     /**
      * AdminController constructor.
@@ -87,7 +88,10 @@ abstract class AdminController extends Controller
      */
     public function saveFlashRedirect($model, $request, $imageColumn = false, $path = 'index')
     {
-        $this->validate($request, $this->validation);
+        $this->validate($request, $this->validationUpdate);
+        if (!$request->hasFile('image')) {
+            $imageColumn=false;
+        }
         $model->fill($this->getData($request, $imageColumn));
         return $this->flashRedirect('update', $model->save(), $path);
     }
@@ -186,7 +190,7 @@ abstract class AdminController extends Controller
         $subfolder = Str::plural(mb_strtolower($this->model));
         $path = Storage::disk('uploads')->putFile($subfolder, $file);
         //dd($path);
-        $fullPath = '/public/i/uploads/'.$path;
+        $fullPath = '/public/i/'.$path;
         [$host, $uploadPath] = explode('/public/', $fullPath);
         return $uploadPath;
     }

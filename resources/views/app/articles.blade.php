@@ -5,7 +5,10 @@
             <div class="row">
                 <div class="col-md-9">
                     <div class="mt-5">
-
+                        <div class="row">
+                            <div class="col-8"></div>
+                            <div class="col-4"></div>
+                        </div>
                         @include('partials.app.articlelist')
                     </div>
                 </div>

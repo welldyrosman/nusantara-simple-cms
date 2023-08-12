@@ -27,7 +27,7 @@ class ArticleFactory extends Factory
             'content' => implode('<br/><br/>', $this->faker->paragraphs(8)),
             'description' => $this->faker->sentence(5),
             'published_at' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
-            'image'=>'/i/uploads/articles/article_img.jpg',
+            'image'=>'/i/uploads/article_img.jpg',
             'view_qty'=>$this->faker->numberBetween(2000,50000),
             'title' => Str::title($this->faker->words(4, true))
         ];

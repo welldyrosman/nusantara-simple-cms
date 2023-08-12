@@ -38,7 +38,7 @@ return [
 
         'uploads' => [
             'driver' => 'local',
-            'root'   => public_path('i/uploads'),
+            'root'   => public_path('/i'),
             'throw' => false,
         ],
 
