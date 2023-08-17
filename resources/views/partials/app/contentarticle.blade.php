@@ -17,4 +17,10 @@
     <div class="content-article ">
         {!! $article->content !!}    
     </div>
+    <div class="d-flex align-items-center">
+        <div class="fw-bolder me-3">Tags : </div>
+        <button class="btn btn-sm btn-secondary me-1">Kurban</button>
+        <button class="btn btn-sm btn-secondary me-1">Kurban</button>
+        <button class="btn btn-sm btn-secondary me-1">Kurban</button>
+    </div>
 </div>
