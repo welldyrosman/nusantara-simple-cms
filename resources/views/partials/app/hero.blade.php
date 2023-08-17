@@ -7,7 +7,7 @@
                 <div class="row my-5">
                     <div class="col-12 text-center">
                         <h1 class="f-bold">{{ $title }}</h1>
-                        <h5>{{!!$description!!}}</h5>
+                        <h5>{!!$description!!}</h5>
                     </div>
                 </div>
                 <div class="row mb-5">
