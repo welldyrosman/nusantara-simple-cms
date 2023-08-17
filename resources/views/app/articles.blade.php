@@ -31,6 +31,7 @@
                     <div class="mt-5">
                         
                         @include('partials.app.articlelist')
+                        @include('partials.app.relatedarticle')
                     </div>
                 </div>
                 <div class="col-md-3">

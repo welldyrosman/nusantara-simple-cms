@@ -3,7 +3,7 @@
         <div class="card mb-3 article-item">
             <div class="row g-0">
                 <div class="col-4">
-                    <img src="{{ URL::asset($article->image) }}" class="img-fluid rounded-start" alt="...">
+                    <img src="{{ URL::asset($article->image) }}" style="width: 300px; height: 200px; object-fit: cover; object-position: 100% 0;"  alt="...">
                 </div>
                 <div class="col-8">
                     <div class="card-body textbox">

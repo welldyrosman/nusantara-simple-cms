@@ -21,10 +21,10 @@
 
                             <div class="col-md-4 mb-3">
                                 <a href="{{ $article->link }}" class="card">
-                                    <img class="img-fluid" alt="100%x280" src="{{URL::asset($article['image'])}}">
+                                    <img style="width: 300px; height: 200px; object-fit: cover; object-position: 100% 0;" alt="100%x280" src="{{URL::asset($article['image'])}}">
                                     <div class="card-body">
                                         <p class="card-title content-article-1 f-sbold">{{ $article['title'] }}</p>
-                                        <p class="card-text content-article-3">{!! $article['content'] !!}</p>
+                                        <p class="card-text content-article-3">{!! $article['description'] !!}</p>
                                     </div>
                                 </a>
                             </div>
