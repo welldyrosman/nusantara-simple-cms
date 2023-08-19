@@ -47,7 +47,7 @@ class DashboardController extends AdminController
                 'today' => $this->getToday()
             ]);
         }
-        $this->flashRaw(__('admin.invalid'));
+       // $this->flashRaw(__('admin.invalid'));
         return redirect(route('admin.user.index'));
     }
 
