@@ -3,6 +3,8 @@
 namespace App\Base\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\ArticleTag;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Artisan;
@@ -72,9 +74,27 @@ abstract class AdminController extends Controller
     {
         $this->validate($request, $this->validation);
         $model = $class::create($this->getData($request, $imageColumn));
+        if(request('tags')){
+            $this->updateTag($request,$model);
+        }
         return $this->flashRedirect('create', $model->id, $path);
     }
-
+    private function updateTag($request,$model){
+        //dd($request);
+            $hasilArray = explode(",", $request->tags);
+            ArticleTag::where('article_id',$model->id)->delete();
+            foreach($hasilArray as $tag){
+                $existtag=Tag::where('tag',strtolower($tag))->first();
+                if(!$existtag){
+                    $existtag=Tag::create(['tag'=>strtolower($tag)]);
+                }
+                
+                ArticleTag::create([
+                    'article_id'=>$model->id,
+                    'tag_id'=>$existtag->id                    
+                    ]);
+            }
+    }
     /**
      * Save, flash success or error then redirect
      *
@@ -93,6 +113,9 @@ abstract class AdminController extends Controller
             $imageColumn=false;
         }
         $model->fill($this->getData($request, $imageColumn));
+        if(request('tags')){
+            $this->updateTag($request,$model);
+        }
         return $this->flashRedirect('update', $model->save(), $path);
     }
 

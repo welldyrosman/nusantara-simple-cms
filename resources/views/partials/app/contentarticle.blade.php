@@ -14,13 +14,13 @@
 
     </div>
     <img src="{{URL::asset($article->image)}}" class="img img-fluid w-100 mb-3"/>
-    <div class="content-article ">
+    <div class="content-article mb-3">
         {!! $article->content !!}    
     </div>
     <div class="d-flex align-items-center">
         <div class="fw-bolder me-3">Tags : </div>
-        <button class="btn btn-sm btn-secondary me-1">Kurban</button>
-        <button class="btn btn-sm btn-secondary me-1">Kurban</button>
-        <button class="btn btn-sm btn-secondary me-1">Kurban</button>
+        @foreach ($article->tags as $tag)
+        <button class="btn btn-sm btn-secondary me-1">{{ $tag->tag }}</button>
+    @endforeach
     </div>
 </div>

@@ -7,7 +7,9 @@
     @foreach (['title','description'] as $a)
         @include('partials.admin.form.text', ['attribute' => $a])
     @endforeach
+    @include('partials.admin.form.tagtify', ['attribute'=>'tags'])
     @include('partials.admin.form.file',['attribute'=>'image'])
     @include('partials.admin.form.textarea', ['attribute' => 'content'])
+ 
     @include('partials.admin.form.submit')
 @endsection

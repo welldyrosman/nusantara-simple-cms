@@ -6,6 +6,8 @@ use App\Base\Controllers\AdminController;
 use App\Http\Controllers\Admin\DataTables\ArticleDataTable;
 use App\Models\Category;
 use App\Models\Article;
+use App\Models\ArticleTag;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class ArticleController extends AdminController
@@ -19,7 +21,8 @@ class ArticleController extends AdminController
         'description'  => 'required|string|max:200',
         'published_at' => 'required|string',
         'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
-        'title'        => 'required|string|max:200'
+        'title'        => 'required|string|max:200',
+        'tags'         => 'nullable'
     ];
     protected $validationUpdate = [
         'content'      => 'required|string',
@@ -27,7 +30,8 @@ class ArticleController extends AdminController
         'description'  => 'required|string|max:200',
         'published_at' => 'required|string',
         'image'        => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
-        'title'        => 'required|string|max:200'
+        'title'        => 'required|string|max:200',
+        'tags'         => 'nullable'
     ];
 
     /**
@@ -37,7 +41,7 @@ class ArticleController extends AdminController
      */
     public function index(ArticleDataTable $dataTable)
     {
-        return $dataTable->render('admin.table', ['link' => route('admin.article.create'),'cannotAdd'=>true]);
+        return $dataTable->render('admin.table', ['link' => route('admin.article.create'), 'cannotAdd' => true]);
     }
 
     /**
@@ -45,6 +49,7 @@ class ArticleController extends AdminController
      */
     public function create()
     {
+
         return view('admin.forms.article', $this->formVariables('article', null, $this->options()));
     }
 
@@ -55,8 +60,8 @@ class ArticleController extends AdminController
      * @throws \Exception
      */
     public function store(Request $request)
-    {   
-        return $this->createFlashRedirect(Article::class, $request,'image');
+    {
+        return $this->createFlashRedirect(Article::class, $request, 'image');
     }
 
     /**
@@ -66,6 +71,7 @@ class ArticleController extends AdminController
      */
     public function show(Article $article)
     {
+
         return view('admin.show.article', $this->formVariables('article', $article, $this->options()));
     }
 
@@ -76,7 +82,8 @@ class ArticleController extends AdminController
      */
     public function edit(Article $article)
     {
-        return view('admin.forms.article', $this->formVariables('article', $article, $this->options()));
+        $article->load('tags');
+        return view('admin.forms.article', $this->formVariables('article', $article, $this->optionsEdit($article)));
     }
 
     /**
@@ -88,7 +95,7 @@ class ArticleController extends AdminController
      */
     public function update(Article $article, Request $request)
     {
-        return $this->saveFlashRedirect($article, $request,'image');
+        return $this->saveFlashRedirect($article, $request, 'image');
     }
 
     /**
@@ -105,6 +112,14 @@ class ArticleController extends AdminController
     /**
      * @return array
      */
+    protected function optionsEdit($article)
+    {
+        $tagNames = $article->tags->pluck('tag')->implode(',');
+        return array_merge(
+            ['options' => Category::pluck('title', 'id')],
+            ['tags' => $tagNames]
+        );
+    }
     protected function options()
     {
         return ['options' => Category::pluck('title', 'id')];

@@ -20,6 +20,14 @@ class Article extends SluggableModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
+    public function tags()
+{
+    return $this->hasManyThrough(Tag::class, ArticleTag::class, 'article_id', 'id', 'id', 'tag_id');
+}
+
+    public function article_tag(){
+        return $this->hasMany(ArticleTag::class);
+    }
     public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Category::class);

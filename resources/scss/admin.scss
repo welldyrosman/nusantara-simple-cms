@@ -6,7 +6,16 @@
 @import "app/_icons";
 @import "admin/_overrides";
 @import "admin/_buttons";
-
+.bootstrap-tagsinput{
+  min-width: 100% !important;
+  font-size: 1.5rem;
+}
+.bootstrap-tagsinput .tag {
+  margin-right: 2px;
+  color: white !important;
+  background-color:grey !important;
+  padding: 0.8rem;
+}
 .box {
   margin-top: 5rem;
 }

@@ -16,7 +16,9 @@ return [
             'content'      => 'Content',
             'description'  => 'Description',
             'published_at' => 'Published At',
-            'title'        => 'Article Title'
+            'title'        => 'Article Title',
+            'tags'        => 'Tags',
+            'image'        => 'Gambar Artikel'
         ],
         'index'  => 'Articles',
         'show'   => 'Show article'
