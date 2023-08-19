@@ -37,21 +37,14 @@
     <link rel="canonical" href="@yield('canonical')">@endif
     <script src="{{ asset(mix('dist/js/app.js')) }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    @if (env('APP_ENV') !== 'local' && config('settings.analytics_id') !== null)
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('settings.analytics_id') }}"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MGVZR7FHC1"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', '{{ config('
-            settings.analytics_id ') }}', {
-                'anonymize_ip': true
-            });
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-MGVZR7FHC1');
     </script>
-    @endif
 </head>
 
 <body>
