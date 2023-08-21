@@ -1,5 +1,5 @@
-<div class="field">
-    <div class="file is-large has-name">
+<div class="form-group">
+    
         <label class="file-label">
             <input class="file-input" type="file" name="{{ $attribute }}">
             <div class="file-cta">
@@ -14,6 +14,6 @@
                 <div class="file-name is-hidden"></div>
             @endif
         </label>
-    </div>
+   
 </div>
 

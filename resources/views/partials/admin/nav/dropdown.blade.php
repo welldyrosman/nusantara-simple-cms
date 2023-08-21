@@ -1,26 +1,33 @@
-<div class="navbar-item has-dropdown is-hoverable">
-    <div class="navbar-link">
-        <span class="icon">{!! icon($icon) !!}</span>
-        <span>{{ empty($resource) && !empty($text) ? $text : __('admin.' . $resource . '.index') }}</span>
-    </div>
-    <div class="navbar-dropdown">
+<li class="nav-item">
+    <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-tachometer-alt"></i>
+        <p>
+            {{ empty($resource) && !empty($text) ? $text : __('admin.' . $resource . '.index') }}
+            <i class="right fas fa-angle-left"></i>
+        </p>
+    </a>
+    <ul class="nav nav-treeview">
         @if (empty($items))
-            <a class="navbar-item" href="{{ route('admin.' . $resource . '.create') }}">
-                <span class="icon">{!! icon('plus') !!}</span>
-                <span>{{ __('admin.' . $resource . '.create') }}</span>
-            </a>
-            @if(!empty($extra))
+            <li class="nav-item">
+                <a href="{{ route('admin.' . $resource . '.create') }}" class="nav-link">
+                    <i class="nav-icon fas fa-plus-square"></i>
+                    <span>{{ __('admin.' . $resource . '.create') }}</span>
+                </a>
+            </li>
+            @if (!empty($extra))
                 @foreach (\Illuminate\Support\Arr::wrap($extra) as $e => $i)
                     <a class="navbar-item" href="{{ route('admin.' . $resource . '.' . $e) }}">
-                        <span class="icon">{!! icon($i) !!}</span>
+                        <i class="nav-icon fas fa-plus-square"></i>
                         <span>{{ __('admin.' . $resource . '.' . $e) }}</span>
                     </a>
                 @endforeach
             @endif
-            <a class="navbar-item" href="{{ route('admin.' . $resource . '.index') }}">
-                <span class="icon">{!! icon('list') !!}</span>
-                <span>{{ __('admin.' . $resource . '.index') }}</span>
-            </a>
+            <li class="nav-item">
+                <a href="{{ route('admin.' . $resource . '.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-table"></i>
+                    <span>{{ __('admin.' . $resource . '.index') }} </span>
+                </a>
+            </li>
         @else
             @foreach ($items as $text => $values)
                 <a class="navbar-item" href="{{ $values[0] }}">
@@ -29,5 +36,5 @@
                 </a>
             @endforeach
         @endif
-    </div>
-</div>
+    </ul>
+</li>

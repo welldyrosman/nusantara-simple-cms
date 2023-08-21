@@ -1,11 +1,11 @@
-<div class="navbar-item {{ $class ?? '' }}">
+<li class="nav-item">
     <form method="POST" action="{{ route('auth.logout') }}">
         @csrf
-        <p class="field">
-            <button type="submit" class="button is-dark">
-                <span class="icon">{!! icon('log-out') !!}</span>
+        <button type="submit" style="text-align: start;color: #c2c7d0;" class="nav-link">
+            <i class="nav-icon fas fa-sign-out-alt"></i>
+            <p>
                 <span>{{ __('auth.logout') }}</span>
-            </button>
-        </p>
+            </p>
+        </button>
     </form>
-</div>
+</li>

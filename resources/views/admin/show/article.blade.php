@@ -9,4 +9,7 @@
         @include('partials.admin.show.text', ['attribute' => $a])
     @endforeach
     @include('partials.admin.show.textarea', ['attribute' => 'content'])
+</div>
+</div>
+
 @endsection
