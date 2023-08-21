@@ -273,6 +273,7 @@ abstract class AdminController extends Controller
      */
     protected function flash($operation, $result): void
     {
+        dd($result);
         $this->flashRaw(__(implode('.', ['admin', $operation, $result])));
     }
 

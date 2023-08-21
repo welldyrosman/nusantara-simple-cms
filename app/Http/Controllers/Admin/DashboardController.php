@@ -42,12 +42,14 @@ class DashboardController extends AdminController
     public function getIndex()
     {
         if (strpos(env('GOOGLE_ANALYTICS_CREDENTIAL_PATH'), '*') === false) {
+            dd( $this->getStatistics());
             return view('admin.dashboard', [
                 'statistics' => $this->getStatistics(),
                 'today' => $this->getToday()
             ]);
         }
-       // $this->flashRaw(__('admin.invalid'));
+        dd("hallo");
+        $this->flashRaw(__('admin.invalid'));
         return redirect(route('admin.user.index'));
     }
 
@@ -223,7 +225,7 @@ class DashboardController extends AdminController
     {
         return cache()->remember('analytics', $this->getCache(), function () {
             return [
-                'alexa' => AlexaService::getAlexaRank(env('APP_URL')),
+                //'alexa' => AlexaService::getAlexaRank(env('APP_URL')),
                 'referrers' => Analytics::fetchTopReferrers($this->period, $this->limit),
                 'pages' => $this->getPages(),
                 'total_visits' => $this->getTotalVisits(),

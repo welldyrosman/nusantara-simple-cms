@@ -21,13 +21,13 @@
             @foreach ($articles as $article)
                 <div class="card mb-3 article-item">
                     <div class="row g-0">
-                        <div class="col-4">
+                        <div class="col-12 col-md-4">
                             <img src="{{ URL::asset($article->image) }}" class="img-fluid rounded-start" alt="...">
                         </div>
-                        <div class="col-8">
+                        <div class="col-12 col-md-8">
                             <div class="card-body textbox">
                                 <h5 class="card-title f-sbold">{{ $article->title }}</h5>
-                                <div class="d-flex fs-12 text-secondary justify-content-between ">
+                                <div class="d-none d-md-block d-flex fs-12 text-secondary justify-content-between ">
                                     <div>Kategori :{{ $article->category->title }}</div>
                                     <div>Penulis :Rizky Aulia [{{ $article->localized_published_at }}]</div>
                                 </div>

@@ -7,8 +7,7 @@
                     <div class="row mt-5">
                         <div class="col-8">
                             <div class="imagecrop">
-                                <img src="{{ $articles[0]->image ? asset($articles[0]->image) : 'https://picsum.photos/600/300' }}" alt="Gambar Kiri" class="img" />
-
+                                <img src="{{ $articles[0]->image ? asset($articles[0]->image) : 'https://picsum.photos/600/300' }}" alt="Gambar Kiri" class="img" style="object-fit: contain;"/>
                                 <div class="gradient-overlay"></div>
                                 <div class="overlay-text"><a href="{{ $articles[2]->link }}">{{$articles[0]->title}}</a></div>
                             </div>
