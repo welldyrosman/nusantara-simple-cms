@@ -1,49 +1,72 @@
-@extends('layouts.admin')
+@extends('layouts.login')
 
 @section('content')
-    <section class="hero is-light is-fullheight">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <div class="column is-4 is-offset-4">
-                    <h3 class="title has-text-grey">{{ __('auth.login.submit') }}</h3>
-                    <div class="box">
-                        <figure class="avatar">
-                            <img alt="Avatar" src="{{ config('settings.login_image') }}">
-                        </figure>
-                        <form id="login" method="POST" action="{{ route('auth.login.post') }}">
-                            @include('partials.admin.errors')
-                            <div class="field">
-                                <div class="control">
-                                    <input class="input is-large" value="{{ old('email') ?? '' }}" type="email" name="email" placeholder="{{ __('auth.login.email') }}" autofocus>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <div class="control">
-                                    <input class="input is-large" type="password" name="password" placeholder="{{ __('auth.login.password') }}">
-                                </div>
-                            </div>
-                            @if ($hasCaptcha)
-                                <div class="field has-addons has-addons-centered">
-                                    <div class="control">
-                                        {!! NoCaptcha::display() !!}
-                                    </div>
-                                </div>
-                            @endif
-                            <div class="field">
-                                <label class="checkbox">
-                                    <input type="checkbox" name="remember" value="1" checked> {{ __('auth.login.remember') }}
-                                </label>
-                            </div>
-                            <div class="control">
-                                <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}" />
-                                <button type="submit" class="button is-info is-fullwidth is-large">{{ __('auth.login.submit') }}</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+<div class="login-box">
+    <!-- /.login-logo -->
+    <div class="card card-outline card-primary">
+      <div class="card-header text-center">
+        <img src="{{ URL::asset('dist/img/nusantaralogo-04.png')}}" />
+      </div>
+      <div class="card-body">
+        <p class="login-box-msg">Nusantara Aqiqah</p>
+  
+        <form id="login" method="POST" action="{{ route('auth.login.post') }}">
+            @include('partials.admin.errors')
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" alue="{{ old('email') ?? '' }}" type="email" name="email" placeholder="{{ __('auth.login.email') }}" autofocus placeholder="Email">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
             </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" name="password" placeholder="{{ __('auth.login.password') }}"class="form-control" placeholder="Password">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+                <input type="checkbox" id="remember">
+                <label for="remember">
+                  Remember Me
+                </label>
+              </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-4">
+                <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}" />
+                <button type="submit" class="btn btn-primary btn-block">{{ __('auth.login.submit') }}</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+  
+        <div class="social-auth-links text-center mt-2 mb-3">
+          <a href="#" class="btn btn-block btn-primary">
+            <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+          </a>
+          <a href="#" class="btn btn-block btn-danger">
+            <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+          </a>
         </div>
-    </section>
+        <!-- /.social-auth-links -->
+  
+        <p class="mb-1">
+          <a href="forgot-password.html">I forgot my password</a>
+        </p>
+        <p class="mb-0">
+          <a href="register.html" class="text-center">Register a new membership</a>
+        </p>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
 @endsection
 
 @if ($hasCaptcha)

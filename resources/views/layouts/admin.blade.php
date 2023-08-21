@@ -38,21 +38,7 @@
             <div class="notification is-info">{{ session('message') }}</div>
         @endif
         <div class="content-wrapper">
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard v1</li>
-                            </ol>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
-            </div>
+            
             <section class="content">
                 <div class="container-fluid">
                     @yield('content')
@@ -66,7 +52,7 @@
     <script src="{{ asset(mix('dist/js/admin.js')) }}" type="text/javascript"></script>
     <script src="{{ asset('dist/plugins/bootstrap/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('dist/js/adminlte.js') }}" type="text/javascript"></script>
-    
+    <script src="{{ asset('dist/plugins/chart.js/Chart.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('dist/plugins/summernote/summernote-bs4.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('dist/plugins/codemirror/codemirror.js')}}"></script>
     <script src="{{ asset('dist/plugins/codemirror/mode/css/css.js')}}"></script>

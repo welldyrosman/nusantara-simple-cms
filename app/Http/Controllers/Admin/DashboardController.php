@@ -41,16 +41,17 @@ class DashboardController extends AdminController
      */
     public function getIndex()
     {
-        if (strpos(env('GOOGLE_ANALYTICS_CREDENTIAL_PATH'), '*') === false) {
-            dd( $this->getStatistics());
-            return view('admin.dashboard', [
-                'statistics' => $this->getStatistics(),
-                'today' => $this->getToday()
-            ]);
-        }
-        dd("hallo");
-        $this->flashRaw(__('admin.invalid'));
-        return redirect(route('admin.user.index'));
+        // if (strpos(env('GOOGLE_ANALYTICS_CREDENTIAL_PATH'), '*') === false) {
+        //     dd( $this->getStatistics());
+        //     return view('admin.dashboard', [
+        //         'statistics' => $this->getStatistics(),
+        //         'today' => $this->getToday()
+        //     ]);
+        // }
+        // dd("hallo");
+        return view('admin.dashboard');
+        //$this->flashRaw(__('admin.invalid'));
+        //return redirect(route('admin.user.index'));
     }
 
     /**
