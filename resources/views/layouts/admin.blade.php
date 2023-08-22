@@ -13,7 +13,7 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" type="text/css" href="{{ asset('dist/plugins/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('dist/admin_dist/adminlte.min.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('dist/plugins/codemirror/codemirror.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('dist/plugins/codemirror/theme/monokai.css') }}">
@@ -51,7 +51,7 @@
     <script src="{{ asset('dist/plugins/jquery-ui/jquery-ui.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset(mix('dist/js/admin.js')) }}" type="text/javascript"></script>
     <script src="{{ asset('dist/plugins/bootstrap/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('dist/js/adminlte.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('dist/admin_dist/adminlte.js') }}" type="text/javascript"></script>
     <script src="{{ asset('dist/plugins/chart.js/Chart.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('dist/plugins/summernote/summernote-bs4.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('dist/plugins/codemirror/codemirror.js')}}"></script>
